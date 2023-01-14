@@ -7,6 +7,9 @@
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.16337386018237082" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16337386018237082" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.16337386018237082" />
+        <entry key="app/src/main/res/layout/item_base.xml" value="0.394" />
+        <entry key="app/src/main/res/layout/item_footer.xml" value="0.11594202898550725" />
+        <entry key="app/src/main/res/layout/item_header.xml" value="0.16286727456940223" />
       </map>
     </option>
   </component>
