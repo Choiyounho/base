@@ -2,7 +2,9 @@ package com.soten.base.example
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.soten.base.BaseFragment
 import com.soten.base.BaseItem
 import com.soten.base.BaseItemDiffUtil
 import com.soten.base.R
@@ -16,13 +18,10 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.runBlocking
 import kotlin.random.Random
 
-class HomeFragment : Fragment(), BaseItemClickListener {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home),
+    BaseItemClickListener {
 
-    // onCreatedView를 했다고 가정
-    private var _binding: FragmentHomeBinding? = null
-    private val binding = _binding!!
-
-    private val itemAdapter = BaseListAdapter(BaseItemDiffUtil(), R.layout.fragment_home, this)
+    private val itemAdapter = BaseListAdapter(BaseItemDiffUtil(), R.layout.item_base, this)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,5 +35,6 @@ class HomeFragment : Fragment(), BaseItemClickListener {
 
     override fun onClickItem(item: BaseItem) {
         // 클릭 이벤트
+        Toast.makeText(requireContext(), "${item.content}", Toast.LENGTH_SHORT).show()
     }
 }
